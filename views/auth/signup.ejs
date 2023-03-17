@@ -1,0 +1,73 @@
+<%- include("../partials/header") %>
+    <%- include("../partials/navbar") %>
+
+
+        <main>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6 p-3">
+                        <%- include('../partials/flash')%>
+                            <h1 class="display-3">Sign Up</h1>
+
+                            <form action="/register" method="POST">
+                                <div class="mb-3">
+                                    <label class="form-label" for="username">Username</label>
+                                    <input type="text" class="form-control" name="username" id="username"
+                                        placeholder="Username">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="FullName">Full Name</label>
+                                    <input type="text" class="form-control" name="fullName" id="username"
+                                        placeholder="Full Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input type="password" class="form-control" name="password" id="password"
+                                        placeholder="Password">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="price">Email</label>
+                                    <input class="form-control" type="email" name="email" id="email"
+                                        placeholder="Email">
+                                </div>
+                                <div class="form-check d-flex justify-content-center mb-4">
+                                    <input name="isAdmin" class="form-check-input me-2" type="checkbox" id="checkbox1"
+                                        value="false" />
+                                    <label class="form-check-label" for="form2Example33">
+                                        Is Admin?
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-success">Sign Up</button>
+                            </form>
+
+                            <div class="mt-3">
+                                <a href="/login" class="link-primary text-decoration-none">Existing
+                                    User? Login</a>
+                            </div>
+
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+            $('#checkbox-value').text($('#checkbox1').val());
+
+            $("#checkbox1").on('change', function () {
+                if ($(this).is(':checked')) {
+                    $(this).attr('value', 'true');
+                } else {
+                    $(this).attr('value', 'false');
+                }
+
+                $('#checkbox-value').text($('#checkbox1').val());
+            });
+        </script>
+
+
+        <%- include("../partials/footer") %>
